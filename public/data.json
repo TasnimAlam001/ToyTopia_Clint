@@ -1,0 +1,162 @@
+[
+    {
+      "id": 1,
+      "name": "Goku Ultra Instinct",
+      "picture": "https://example.com/goku.jpg",
+      "rating": 4.5,
+      "category": "Anime",
+      "price": 29.99
+    },
+    {
+      "id": 2,
+      "name": "Spider-Man",
+      "picture": "https://example.com/spiderman.jpg",
+      "rating": 4.7,
+      "category": "Marvel",
+      "price": 19.99
+    },
+    {
+      "id": 3,
+      "name": "Iron Man Mark LXXXV",
+      "picture": "https://example.com/ironman.jpg",
+      "rating": 4.8,
+      "category": "Marvel",
+      "price": 39.99
+    },
+    {
+      "id": 4,
+      "name": "Batman",
+      "picture": "https://example.com/batman.jpg",
+      "rating": 4.6,
+      "category": "DC",
+      "price": 24.99
+    },
+    {
+      "id": 5,
+      "name": "Wonder Woman",
+      "picture": "https://example.com/wonderwoman.jpg",
+      "rating": 4.9,
+      "category": "DC",
+      "price": 29.99
+    },
+    {
+        "id": 6,
+        "name": "Naruto Uzumaki",
+        "picture": "https://example.com/naruto.jpg",
+        "rating": 4.2,
+        "category": "Anime",
+        "price": 34.99
+      },
+      {
+        "id": 7,
+        "name": "Captain America",
+        "picture": "https://example.com/captainamerica.jpg",
+        "rating": 4.5,
+        "category": "Marvel",
+        "price": 24.99
+      },
+      {
+        "id": 8,
+        "name": "Harley Quinn",
+        "picture": "https://example.com/harleyquinn.jpg",
+        "rating": 4.4,
+        "category": "DC",
+        "price": 29.99
+      },
+      {
+        "id": 9,
+        "name": "Vegeta Super Saiyan Blue",
+        "picture": "https://example.com/vegeta.jpg",
+        "rating": 4.7,
+        "category": "Anime",
+        "price": 39.99
+      },
+      {
+        "id": 10,
+        "name": "Thor",
+        "picture": "https://example.com/thor.jpg",
+        "rating": 4.6,
+        "category": "Marvel",
+        "price": 29.99
+      },
+      {
+        "id": 11,
+        "name": "Saitama",
+        "picture": "https://example.com/saitama.jpg",
+        "rating": 4.8,
+        "category": "Anime",
+        "price": 32.99
+      },
+      {
+        "id": 12,
+        "name": "Black Widow",
+        "picture": "https://example.com/blackwidow.jpg",
+        "rating": 4.5,
+        "category": "Marvel",
+        "price": 27.99
+      },
+      {
+        "id": 13,
+        "name": "Joker",
+        "picture": "https://example.com/joker.jpg",
+        "rating": 4.3,
+        "category": "DC",
+        "price": 21.99
+      },
+      {
+        "id": 14,
+        "name": "Monkey D. Luffy",
+        "picture": "https://example.com/luffy.jpg",
+        "rating": 4.7,
+        "category": "Anime",
+        "price": 36.99
+      },
+      {
+        "id": 15,
+        "name": "Doctor Strange",
+        "picture": "https://example.com/doctorstrange.jpg",
+        "rating": 4.9,
+        "category": "Marvel",
+        "price": 44.99
+      },
+      {
+        "id": 16,
+        "name": "Attack on Titan Eren Yeager",
+        "picture": "https://example.com/eren.jpg",
+        "rating": 4.6,
+        "category": "Anime",
+        "price": 26.99
+      },
+      {
+        "id": 17,
+        "name": "Deadpool",
+        "picture": "https://example.com/deadpool.jpg",
+        "rating": 4.8,
+        "category": "Marvel",
+        "price": 39.99
+      },
+      {
+        "id": 18,
+        "name": "Superman",
+        "picture": "https://example.com/superman.jpg",
+        "rating": 4.7,
+        "category": "DC",
+        "price": 31.99
+      },
+      {
+        "id": 19,
+        "name": "Naruto Sage Mode",
+        "picture": "https://example.com/narutosagemode.jpg",
+        "rating": 4.5,
+        "category": "Anime",
+        "price": 29.99
+      },
+      {
+        "id": 20,
+        "name": "Hulk",
+        "picture": "https://example.com/hulk.jpg",
+        "rating": 4.9,
+        "category": "Marvel",
+        "price": 49.99
+      }
+  ]
