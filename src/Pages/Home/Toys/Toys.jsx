@@ -1,20 +1,25 @@
 
 import { useEffect, useState } from "react";
+import { FaRegStar, FaStar } from "react-icons/fa";
+import Rating from "react-rating";
 
 import 'react-tabs/style/react-tabs.css';
 
 const Toys = () => {
     const [toys, setToys] = useState([]);
-    const [openTab, setOpenTab] =useState(1);
+    const [openTab, setOpenTab] = useState(1);
     useEffect(() => {
         fetch('http://localhost:5000/toys')
             .then(res => res.json())
             .then(data => setToys(data));
-    }, [])
+    }, []);
+
+    const animeToys = toys.filter(toy => toy.category === "Anime")
+    const marvelToys = toys.filter(toy => toy.category === "Marvel")
+    const dcToys = toys.filter(toy => toy.category === "DC")
 
 
     return (
-
 
         <div className="mt-8">
             <div className="flex flex-wrap">
@@ -39,7 +44,7 @@ const Toys = () => {
                                 href="#link1"
                                 role="tablist"
                             >
-                                Profile
+                                Anime
                             </a>
                         </li>
                         <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -58,7 +63,7 @@ const Toys = () => {
                                 href="#link2"
                                 role="tablist"
                             >
-                                Settings
+                                Marvel
                             </a>
                         </li>
                         <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -77,7 +82,7 @@ const Toys = () => {
                                 href="#link3"
                                 role="tablist"
                             >
-                                Options
+                                DC
                             </a>
                         </li>
                     </ul>
@@ -85,35 +90,84 @@ const Toys = () => {
                         <div className="px-4 py-5 flex-auto">
                             <div className="tab-content tab-space">
                                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
-                                    <p>
-                                        Collaboratively administrate empowered markets via
-                                        plug-and-play networks. Dynamically procrastinate B2C users
-                                        after installed base benefits.
-                                        <br />
-                                        <br /> Dramatically visualize customer directed convergence
-                                        without revolutionary ROI.
-                                    </p>
+
+                                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 ">
+                                        {
+                                            animeToys.map(animeToy => <div className="card card-compact w-full bg-base-100 shadow-xl"
+                                                key={animeToy.id}>
+                                                <figure><img className="lg:h-[400px]" src={animeToy.picture} alt="Shoes" /></figure>
+                                                <div className="card-body">
+                                                    <h2 className="card-title">{animeToy.name}</h2>
+                                                    <p>Price: ${animeToy.price}</p>
+                                                    <div>
+                                                        <span>Rating:</span>
+                                                        <Rating
+                                                            placeholderRating={animeToy.rating}
+                                                            emptySymbol={<FaRegStar></FaRegStar>}
+                                                            placeholderSymbol={<FaStar className="text-red-700"></FaStar>}
+                                                            fullSymbol={<FaStar></FaStar>}
+                                                        />
+                                                    </div>
+                                                    <div className="card-actions justify-end">
+                                                        <button className="btn btn-primary">View Details</button>
+                                                    </div>
+                                                </div>
+                                            </div>)
+                                        }
+                                    </div>
                                 </div>
                                 <div className={openTab === 2 ? "block" : "hidden"} id="link2">
-                                    <p>
-                                        Completely synergize resource taxing relationships via
-                                        premier niche markets. Professionally cultivate one-to-one
-                                        customer service with robust ideas.
-                                        <br />
-                                        <br />
-                                        Dynamically innovate resource-leveling customer service for
-                                        state of the art customer service.
-                                    </p>
+                                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 ">
+                                        {
+                                            marvelToys.map(marvelToy => <div className="card card-compact w-full bg-base-100 shadow-xl"
+                                                key={marvelToy.id}>
+                                                <figure><img className="lg:h-[400px]" src={marvelToy.picture} alt="Shoes" /></figure>
+                                                <div className="card-body">
+                                                    <h2 className="card-title">{marvelToy.name}</h2>
+                                                    <p>Price: ${marvelToy.price}</p>
+                                                    <div>
+                                                        <span>Rating:</span>
+                                                        <Rating
+                                                            placeholderRating={marvelToy.rating}
+                                                            emptySymbol={<FaRegStar></FaRegStar>}
+                                                            placeholderSymbol={<FaStar className="text-red-700"></FaStar>}
+                                                            fullSymbol={<FaStar></FaStar>}
+                                                        />
+                                                    </div>
+                                                    <div className="card-actions justify-end">
+
+                                                        <button className="btn btn-primary">View Details</button>
+                                                    </div>
+                                                </div>
+                                            </div>)
+                                        }
+                                    </div>
                                 </div>
                                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
-                                    <p>
-                                        Efficiently unleash cross-media information without
-                                        cross-media value. Quickly maximize timely deliverables for
-                                        real-time schemas.
-                                        <br />
-                                        <br /> Dramatically maintain clicks-and-mortar solutions
-                                        without functional solutions.
-                                    </p>
+                                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 ">
+                                        {
+                                            dcToys.map(toy => <div className="card card-compact w-full bg-base-100 shadow-xl"
+                                                key={toy.id}>
+                                                <figure><img className="lg:h-[400px]" src={toy.picture} alt="Shoes" /></figure>
+                                                <div className="card-body">
+                                                    <h2 className="card-title">{toy.name}</h2>
+                                                    <p>Price: ${toy.price}</p>
+                                                    <div>
+                                                        <span>Rating:</span>
+                                                        <Rating
+                                                            placeholderRating={toy.rating}
+                                                            emptySymbol={<FaRegStar></FaRegStar>}
+                                                            placeholderSymbol={<FaStar  className="text-red-700"></FaStar>}
+                                                            fullSymbol={<FaStar></FaStar>}
+                                                        />
+                                                    </div>
+                                                    <div className="card-actions justify-end">
+                                                        <button className="btn btn-primary">View Details</button>
+                                                    </div>
+                                                </div>
+                                            </div>)
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>
