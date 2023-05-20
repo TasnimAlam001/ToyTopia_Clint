@@ -5,15 +5,15 @@ import { Button } from "@material-tailwind/react";
 
 const NavBar = () => {
 
-    const { user,LogOut }=useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     console.log(user);
 
-    const handleLogOut =()=>{
-        LogOut()
-        .then()
-        .catch(error => {
-            console.log(error);
-        })
+    const handleLogOut = () => {
+        logOut()
+            .then(()=>{})
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     return (
@@ -25,45 +25,47 @@ const NavBar = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to="/"></Link>Home</li>
-                        <li><Link  to="/allToys">All Toys</Link></li>
-                        <li><Link  to="/myToys">My Toys</Link></li>
-                        <li><Link  to="/addToy">Add a Toy</Link></li>
-                        <li><Link  to="/blog">Blog</Link></li>
+                        <li><Link to="/allToys">All Toys</Link></li>
+                        <li><Link to="/myToys">My Toys</Link></li>
+                        <li><Link to="/addToy">Add a Toy</Link></li>
+                        <li><Link to="/blog">Blog</Link></li>
                     </ul>
                 </div>
                 <Link className="btn btn-ghost normal-case text-3xl font-bold ">Toy<span className="text-red-700"> Topia</span></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                <li className="font-bold text-red-700 text-2xl"><Link to="/">Home</Link></li>
-                        <li className="font-bold"><Link to="/allToys">All Toys</Link></li>
-                        <li className="font-bold"><Link to="/myToys">My Toys</Link></li>
-                        <li className="font-bold"><Link to="/addToy">Add a Toy</Link></li>
-                        <li className="font-bold"><Link to="/blog">Blog</Link></li>
+                    <li className="font-bold text-red-700 text-2xl"><Link to="/">Home</Link></li>
+                    <li className="font-bold"><Link to="/allToys">All Toys</Link></li>
+                    <li className="font-bold"><Link to="/myToys">My Toys</Link></li>
+                    <li className="font-bold"><Link to="/addToy">Add a Toy</Link></li>
+                    <li className="font-bold"><Link to="/blog">Blog</Link></li>
                 </ul>
             </div>
-            {
-                user ? <Link to="/login" className="navbar-end mr-5" >logIn</Link>
-                :
-                <div className="navbar-end mr-5">
-                <div className="dropdown dropdown-end">
-                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full ">
-                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" />
+            {  user ?
+                    <div className="navbar-end mr-5">
+                        <div className="dropdown dropdown-end">
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full ">
+                                    <img src={user.photoURL? user.photoURL :"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} />
+                                </div>
+                            </label>
+                            <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                                <li>
+                                    <a className="justify-between">
+                                        Profile
+                                        <span className="badge">New</span>
+                                    </a>
+                                </li>
+                                <li><a>Settings</a></li>
+                                <li><Button className="text-red-700" onClick={handleLogOut}>Log Out</Button></li>
+                            </ul>
                         </div>
-                    </label>
-                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li>
-                            <a className="justify-between">
-                                Profile
-                                <span className="badge">New</span>
-                            </a>
-                        </li>
-                        <li><a>Settings</a></li>
-                        <li><Button onClick={handleLogOut}>LogOut</Button></li>
-                    </ul>
-                </div>
-            </div>
+                    </div>
+                    :
+                    <div className="navbar-end mr-5">
+                        <Link className="btn btn-ghost normal-case text-2xl font-bold" to="/login">login</Link>
+                    </div>
             }
         </div>
     );
