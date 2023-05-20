@@ -1,6 +1,21 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
+import { Button } from "@material-tailwind/react";
 
 const NavBar = () => {
+
+    const { user,LogOut }=useContext(AuthContext);
+    console.log(user);
+
+    const handleLogOut =()=>{
+        LogOut()
+        .then()
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
     return (
         <div className="navbar bg-base-100 py-4 shadow-[0px_0px_10px_0px_#00000024] my-5 rounded-md bg-gradient-to-b from-gray-400 to-gray-300">
             <div className="navbar-start">
@@ -27,7 +42,10 @@ const NavBar = () => {
                         <li className="font-bold"><Link to="/blog">Blog</Link></li>
                 </ul>
             </div>
-            <div className="navbar-end mr-5">
+            {
+                user ? <Link to="/login" className="navbar-end mr-5" >logIn</Link>
+                :
+                <div className="navbar-end mr-5">
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full ">
@@ -42,10 +60,11 @@ const NavBar = () => {
                             </a>
                         </li>
                         <li><a>Settings</a></li>
-                        <li><Link to="/login">Login</Link></li>
+                        <li><Button onClick={handleLogOut}>LogOut</Button></li>
                     </ul>
                 </div>
             </div>
+            }
         </div>
     );
 };

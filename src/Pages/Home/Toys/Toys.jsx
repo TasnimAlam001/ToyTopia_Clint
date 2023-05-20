@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { FaRegStar, FaStar } from "react-icons/fa";
+import { FaArrowRight, FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 
 import 'react-tabs/style/react-tabs.css';
@@ -21,7 +21,7 @@ const Toys = () => {
 
     return (
 
-        <div className="mt-8">
+        <div className="mt-8 ">
             <div className="flex flex-wrap">
                 <div className="w-full">
                     <ul
@@ -86,7 +86,7 @@ const Toys = () => {
                             </a>
                         </li>
                     </ul>
-                    <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+                    <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded bg-gradient-to-b from-gray-400 to-gray-300">
                         <div className="px-4 py-5 flex-auto">
                             <div className="tab-content tab-space">
                                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
@@ -97,19 +97,20 @@ const Toys = () => {
                                                 key={animeToy.id}>
                                                 <figure><img className="lg:h-[400px]" src={animeToy.picture} alt="Shoes" /></figure>
                                                 <div className="card-body">
-                                                    <h2 className="card-title">{animeToy.name}</h2>
-                                                    <p>Price: ${animeToy.price}</p>
+                                                    <h2 className="card-title text-red-700">{animeToy.name}</h2>
+                                                    <p className="font-bold">Price: ${animeToy.price}</p>
                                                     <div>
-                                                        <span>Rating:</span>
+                                                        <span className="font-bold">Rating:</span>
                                                         <Rating
                                                             placeholderRating={animeToy.rating}
+                                                            readonly
                                                             emptySymbol={<FaRegStar></FaRegStar>}
                                                             placeholderSymbol={<FaStar className="text-red-700"></FaStar>}
                                                             fullSymbol={<FaStar></FaStar>}
                                                         />
                                                     </div>
                                                     <div className="card-actions justify-end">
-                                                        <button className="btn btn-primary">View Details</button>
+                                                    <button className="btn btn-outline text-red-700">View Details <FaArrowRight className="ml-4"></FaArrowRight></button>
                                                     </div>
                                                 </div>
                                             </div>)
@@ -123,12 +124,13 @@ const Toys = () => {
                                                 key={marvelToy.id}>
                                                 <figure><img className="lg:h-[400px]" src={marvelToy.picture} alt="Shoes" /></figure>
                                                 <div className="card-body">
-                                                    <h2 className="card-title">{marvelToy.name}</h2>
-                                                    <p>Price: ${marvelToy.price}</p>
+                                                    <h2 className="card-title text-red-700">{marvelToy.name}</h2>
+                                                    <p className="font-bold">Price: ${marvelToy.price}</p>
                                                     <div>
-                                                        <span>Rating:</span>
+                                                        <span className="font-bold">Rating:</span>
                                                         <Rating
                                                             placeholderRating={marvelToy.rating}
+                                                            readonly
                                                             emptySymbol={<FaRegStar></FaRegStar>}
                                                             placeholderSymbol={<FaStar className="text-red-700"></FaStar>}
                                                             fullSymbol={<FaStar></FaStar>}
@@ -136,7 +138,7 @@ const Toys = () => {
                                                     </div>
                                                     <div className="card-actions justify-end">
 
-                                                        <button className="btn btn-primary">View Details</button>
+                                                    <button className="btn btn-outline text-red-700">View Details <FaArrowRight className="ml-4"></FaArrowRight></button>
                                                     </div>
                                                 </div>
                                             </div>)
@@ -150,19 +152,20 @@ const Toys = () => {
                                                 key={toy.id}>
                                                 <figure><img className="lg:h-[400px]" src={toy.picture} alt="Shoes" /></figure>
                                                 <div className="card-body">
-                                                    <h2 className="card-title">{toy.name}</h2>
-                                                    <p>Price: ${toy.price}</p>
+                                                    <h2 className="card-title text-red-700">{toy.name}</h2>
+                                                    <p className="font-bold">Price: ${toy.price}</p>
                                                     <div>
-                                                        <span>Rating:</span>
+                                                        <span className="font-bold">Rating:</span>
                                                         <Rating
                                                             placeholderRating={toy.rating}
+                                                            readonly
                                                             emptySymbol={<FaRegStar></FaRegStar>}
                                                             placeholderSymbol={<FaStar  className="text-red-700"></FaStar>}
                                                             fullSymbol={<FaStar></FaStar>}
                                                         />
                                                     </div>
                                                     <div className="card-actions justify-end">
-                                                        <button className="btn btn-primary">View Details</button>
+                                                        <button className="btn btn-outline text-red-700">View Details <FaArrowRight className="ml-4"></FaArrowRight></button>
                                                     </div>
                                                 </div>
                                             </div>)
