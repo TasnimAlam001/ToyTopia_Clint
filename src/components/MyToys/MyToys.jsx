@@ -12,7 +12,7 @@ const MyToys = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setToys(data))
-    }, []);
+    }, [url]);
 
 
 
@@ -36,13 +36,35 @@ const MyToys = () => {
         }
     }
 
+    const handleToyUpdate = id =>{
+        fetch(`http://localhost:5000/toy/${id}`,{
+            method: 'PATCH',
+            headers:{
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({status: 'update'})
+            
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.modifiedCount>0){
+                const remaining = toys.filter(toy=>toy._id !==id);
+                const updated = toys.find(toy => toy._id === id);
+                updated.status= 'update'
+                const newToys = [updated, ...remaining];
+                setToys(newToys);
+            }
+        })
+    }
+
 
 
 
 
 
     return (
-        <div className=" w-full">
+        <div className="overflow-x-auto w-full">
             <table className="table w-full">
                 {/* head */}
                 <thead>
@@ -62,6 +84,7 @@ const MyToys = () => {
                             key={toy._id}
                             toy={toy}
                             handleDelete={handleDelete}
+                            handleToyUpdate={handleToyUpdate}
 
                         ></MyToyInfo>)
                     }

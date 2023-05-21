@@ -1,7 +1,9 @@
+
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
-const MyToyInfo = ({ toy,handleDelete }) => {
+const MyToyInfo = ({ toy,handleDelete, status }) => {
     const { _id, name, img, category, quantity, toyName, price } = toy;
 
     
@@ -44,7 +46,10 @@ const MyToyInfo = ({ toy,handleDelete }) => {
                 <td>${price}</td>
                 : "NM"}
             <th>
-                <button className="btn btn-outline text-red-700 btn-xs"><span className="">Details</span> <FaArrowRight className="ml-3"></FaArrowRight></button>
+                {
+                    status === 'update'? <span className="font-bold text-primary">Updated</span>:
+                    
+                    <Link to={`/update/${_id}`}><button  className="btn btn-outline text-red-700 btn-xs"><span className="">Update</span> <FaArrowRight className="ml-3"></FaArrowRight></button></Link>}
             </th>
         </tr>
 
