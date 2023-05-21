@@ -22,7 +22,7 @@ const Toys = () => {
 
     return (
 
-        <div className="mt-8 ">
+        <div className="mt-28">
             <div className="flex flex-wrap">
                 <div className="w-full">
                     <ul
