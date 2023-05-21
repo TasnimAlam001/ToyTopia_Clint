@@ -1,3 +1,4 @@
+import { Alert } from "@material-tailwind/react";
 import { useLoaderData } from "react-router-dom";
 
 
@@ -40,7 +41,9 @@ const Update = () => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    alert('Product Updated');
+                    <Alert severity="success" color="info">
+                        Successfully Updated !
+                    </Alert>;
                 }
             })
     };

@@ -19,5 +19,5 @@ else if (currentRoute === '/myToys') {
 else if (currentRoute === '/register') {
   document.title = 'ToyTopia-Register';
 } else {
-  document.title = 'My Website'; // fallback title
+  document.title = 'ToyTopia';
 }

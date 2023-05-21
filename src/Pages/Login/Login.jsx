@@ -5,6 +5,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 
+
 const Login = () => {
 
     const { signIn } = useContext(AuthContext);
@@ -27,7 +28,10 @@ const Login = () => {
                 console.log(user);
                 navigate(from, {replace:true})
             })
-            .catch(error => console.log(error));
+            .catch(error =>{
+                alert(error);
+                console.log(error)
+            } );
 
     }
 

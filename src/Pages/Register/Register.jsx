@@ -24,7 +24,10 @@ const Register = () => {
                 console.log(user);
                 navigate('/');
             })
-            .catch(error => console.log(error));
+            .catch(error =>{
+                alert(error);
+                console.log(error);
+            } );
 
     }
 
