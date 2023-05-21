@@ -1,4 +1,5 @@
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const AllToysTable = ({ toy }) => {
     const { name, img, category, quantity, toyName, price } = toy;
@@ -33,7 +34,7 @@ const AllToysTable = ({ toy }) => {
                 <td>${price}</td>
                 : "NM"}
             <th>
-                <button className="btn btn-outline text-red-700 btn-xs"><span className="">Details</span> <FaArrowRight className="ml-3"></FaArrowRight></button>
+                <Link to={`/toy/${toy._id}`}><button className="btn btn-outline text-red-700 btn-xs"><span className="">Details</span> <FaArrowRight className="ml-3"></FaArrowRight></button></Link>
             </th>
         </tr>
 

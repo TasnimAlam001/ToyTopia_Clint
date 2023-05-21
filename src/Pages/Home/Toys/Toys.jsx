@@ -112,7 +112,7 @@ const Toys = () => {
                                                         />
                                                     </div>
                                                     <div className="card-actions justify-end">
-                                                    <Link to={`/toy/${toy._id}`}>
+                                                    <Link to={`/toys/${toy._id}`}>
                                                             <button className="btn btn-outline text-red-700">View Details <FaArrowRight className="ml-4"></FaArrowRight></button>
                                                         </Link>
                                                     </div>
@@ -142,7 +142,7 @@ const Toys = () => {
                                                     </div>
                                                     <div className="card-actions justify-end">
 
-                                                    <Link to={`/toy/${toy._id}`}>
+                                                    <Link to={`/toys/${toy._id}`}>
                                                             <button className="btn btn-outline text-red-700">View Details <FaArrowRight className="ml-4"></FaArrowRight></button>
                                                         </Link>
                                                     </div>
@@ -171,7 +171,7 @@ const Toys = () => {
                                                         />
                                                     </div>
                                                     <div className="card-actions justify-end">
-                                                        <Link to={`/toy/${toy._id}`}>
+                                                        <Link to={`/toys/${toy._id}`}>
                                                             <button className="btn btn-outline text-red-700">View Details <FaArrowRight className="ml-4"></FaArrowRight></button>
                                                         </Link>
                                                     </div>

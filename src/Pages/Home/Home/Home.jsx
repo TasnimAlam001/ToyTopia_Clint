@@ -1,4 +1,4 @@
-import Footer from "../../Shared/Footer/Footer";
+
 import Toys from "../Toys/Toys";
 import AboutUs from "./AboutUs";
 import Banner from "./Banner";
@@ -24,7 +24,7 @@ const Home = () => {
             </div>
             <TopRated></TopRated>
             <AboutUs></AboutUs>
-            <Footer></Footer>
+            
         </div>
     );
 };

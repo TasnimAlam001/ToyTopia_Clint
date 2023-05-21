@@ -10,6 +10,8 @@ import Register from "../Pages/Register/Register";
 import ToyDetails from "../components/ToyDetails/ToyDetails";
 import PrivateRoute from "./PrivateRoute";
 import Update from "../components/Update/Update";
+import SearchBar from "../Pages/Shared/NavBar/SearchBar";
+import ToyDetail from "../components/ToyDetail/ToyDetail";
 
 const router = createBrowserRouter([
     {
@@ -45,8 +47,8 @@ const router = createBrowserRouter([
             element:<Register></Register>
         },
         {
-            path:"/toy/:id",
-            element:<ToyDetails></ToyDetails>,
+            path:"/toys/:id",
+            element:<PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
             loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
         },
         {
@@ -55,6 +57,15 @@ const router = createBrowserRouter([
             loader:({params})=>fetch(`http://localhost:5000/toy/${params.id}`)
 
             
+        },
+        {
+            path:'/search',
+            element:<SearchBar></SearchBar>
+        },
+        {
+            path:"/toy/:id",
+            element:<PrivateRoute><ToyDetail></ToyDetail></PrivateRoute>,
+            loader:({params})=>fetch(`http://localhost:5000/toy/${params.id}`)
         }
       ]
     },

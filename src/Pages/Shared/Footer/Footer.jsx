@@ -14,9 +14,9 @@ const Footer = () => {
                         <span className="footer-title text-black">Leave a Comment</span>
                         <div className="grid grid-flow-col gap-4">
 
-                            <div className="relative">
-                                <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-16" />
-                                <button className="btn btn-outline text-red-700 absolute top-0 right-0 rounded-l-none">Comment</button>
+                            <div className="">
+                                <input type="text"  className="input input-bordered w-full pr-16 text-black" />
+                                <button className="btn btn-outline text-red-700 mt-3 rounded-xl">Comment</button>
                             </div>
                         </div>
                     </div>

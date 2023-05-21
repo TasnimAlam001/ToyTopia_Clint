@@ -3,10 +3,11 @@ import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
+
 const MyToyInfo = ({ toy,handleDelete, status }) => {
     const { _id, name, img, category, quantity, toyName, price } = toy;
 
-    
+  
 
 
 
