@@ -10,13 +10,15 @@ const AddToy = () => {
         const image = form.image.value;
         const category = form.category.value;
         const quantity = form.quantity.value;
+        const price = form.price.value;
         const addToy = {
             name: name,
             email: email,
             toyName: toyName,
             img: image,
             category: category,
-            quantity: quantity
+            quantity: quantity,
+            price: price
         }
         console.log(addToy);
 
@@ -83,6 +85,12 @@ const AddToy = () => {
                                             <span className="label-text">Available Quantity</span>
                                         </label>
                                         <input type="text" placeholder="Available Quantity" name="quantity" className="input input-bordered" />
+                                    </div>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text">Price</span>
+                                        </label>
+                                        <input type="text" placeholder="Price" name="price" className="input input-bordered" />
                                     </div>
 
                                 </div>

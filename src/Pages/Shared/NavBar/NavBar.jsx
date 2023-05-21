@@ -37,8 +37,12 @@ const NavBar = () => {
                 <ul className="menu menu-horizontal px-1">
                     <li className="font-bold text-red-700 text-2xl"><Link to="/">Home</Link></li>
                     <li className="font-bold"><Link to="/allToys">All Toys</Link></li>
-                    <li className="font-bold"><Link to="/myToys">My Toys</Link></li>
-                    <li className="font-bold"><Link to="/addToy">Add a Toy</Link></li>
+                    {
+                        user && <>
+                        <li className="font-bold"><Link to="/myToys">My Toys</Link></li>
+                        <li className="font-bold"><Link to="/addToy">Add a Toy</Link></li>
+                        </>
+                    }
                     <li className="font-bold"><Link to="/blog">Blog</Link></li>
                 </ul>
             </div>
