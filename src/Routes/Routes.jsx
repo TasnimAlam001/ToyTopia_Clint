@@ -12,6 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import Update from "../components/Update/Update";
 import SearchBar from "../Pages/Shared/NavBar/SearchBar";
 import ToyDetail from "../components/ToyDetail/ToyDetail";
+import NotFound from "../components/NotFound/NotFound";
 
 const router = createBrowserRouter([
     {
@@ -69,5 +70,9 @@ const router = createBrowserRouter([
         }
       ]
     },
+    {
+        path:'*',
+        element:<NotFound></NotFound>
+    }
   ]);
   export default router;
