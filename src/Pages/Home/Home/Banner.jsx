@@ -2,7 +2,7 @@ import logo from "../../../../banner/banner.webp"
 
 const Banner = () => {
     return (
-        <div className="carousel-item relative w-full ">
+        <div data-aos="fade-down" className="carousel-item relative w-full ">
             <img src={logo} className="w-full rounded-lg h-5/6" />
             <div className="absolute  transform -translate-y-1/2 left-5 right-5 top-1/2 lg:space-y-6 lg:ml-10">
                 <h2 className="card-title font-mono lg:text-7xl font-bold"><span className="text-red-700"> Action </span> Toys </h2>

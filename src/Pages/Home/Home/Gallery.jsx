@@ -4,7 +4,7 @@ const Gallery = () => {
 
 
     return (
-        <div className="carousel w-2/3 mx-auto">
+        <div data-aos="fade-down" className="carousel w-2/3 mx-auto">
             <div id="slide1" className="carousel-item relative w-full mx-auto">
                 <img src="https://cdn.shopify.com/s/files/1/1843/8169/products/thumb_1381a9ed-1d59-4a58-b06e-0183c615c924_1024x.jpg?v=1680785938" className="w-full lg:h-[700px]" />
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
