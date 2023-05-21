@@ -10,7 +10,7 @@ const Alltoys = () => {
     console.log()
 
     useEffect(() => {
-        fetch('http://localhost:5000/toy')
+        fetch('https://assignment-11-server-seven-dusky.vercel.app/toy')
             .then(res => res.json())
             .then(data => setToys(data));
     }, []);
